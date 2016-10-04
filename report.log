@@ -1,0 +1,806 @@
+vcs -sverilog -debug_all dut.sv testbench.sv controlunit.sv dataunit.sv inf.sv
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'CentOS release 5.8 (Final)' is not supported on 'x86_64' 
+  officially, assuming linux compatibility by default. Set VCS_ARCH_OVERRIDE 
+  to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+          Version G-2012.09-SP1 -- Fri Dec 18 22:49:25 2015
+               Copyright (c) 1991-2012 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'dut.sv'
+Parsing design file 'testbench.sv'
+Parsing design file 'controlunit.sv'
+Parsing design file 'dataunit.sv'
+Parsing design file 'inf.sv'
+Top Level Modules:
+       top
+TimeScale is 1 ns / 10 ps
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+5 modules and 0 UDP read.
+	However, due to incremental compilation, only 2 modules need to be compiled.
+recompiling module testP because:
+	This module or some inlined child module(s) has/have been modified.
+recompiling module memory because:
+	This module or some inlined child module(s) has/have been modified.
+Both modules done.
+make[1]: Entering directory `/courses/engr850/engr850-15/project/layered/csrc'
+ld -r -m elf_i386 -o pre_vcsobj_1_1.o --whole-archive pre_vcsobj_1_1.a --no-whole-archive
+ld -r -m elf_i386 -o pre_vcsobj_1_2.o --whole-archive pre_vcsobj_1_2.a --no-whole-archive
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv -melf_i386 -m32    -Wl,-whole-archive    -Wl,-no-whole-archive  _vcsobj_1_1.o  5NrI_d.o 5NrIB_d.o SIM_l.o    pre_vcsobj_1_1.o pre_vcsobj_1_2.o  rmapats_mop.o rmapats.o       /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/libnplex_stub.so /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/libvirsim.so /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/librterrorinf.so /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/libsnpsmalloc.so     /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/libvcsnew.so /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/libuclinative.so           /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/vcs_save_restore_new.o /packages/synopsys/vcs_mx/G-2012.09-SP1/linux/lib/ctype-stubs_32.a -ldl -lm  -lc -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/courses/engr850/engr850-15/project/layered/csrc'
+CPU time: .397 seconds to compile + .047 seconds to elab + .281 seconds to link
+./simv -l simv.log
+Chronologic VCS simulator copyright 1991-2012
+Contains Synopsys proprietary information.
+Compiler version G-2012.09-SP1; Runtime version G-2012.09-SP1;  Dec 18 22:49 2015
+Data Unit: Time = 0ns, Operand1 = xx, Operand2 = xx, DR = 00, GR = 00 AR = 00 FR = 0 
+
+Control Unit: Time = 0ns, -----Reset State-----
+
+Data Unit: Time = 6ns, Instruction = 00, dat = zz, RD = 0,WR = 0, add = 0, load_IR = 0 
+
+Data Unit: Time = 6ns, Operand1 = xx, Operand2 = xx, DR = 00, GR = 00 AR = 00 FR = 0 
+
+6ns: Reset unsuccessful
+Data Unit: Time = 18ns, Instruction = 00, dat = zz, RD = 0,WR = 0, add = 0, load_IR = 0 
+
+Data Unit: Time = 18ns, Operand1 = xx, Operand2 = xx, DR = 00, GR = 00 AR = 00 FR = 0 
+
+18ns: Reset unsuccessful
+Data Unit: Time = 30ns, Instruction = 00, dat = zz, RD = 0,WR = 0, add = 0, load_IR = 0 
+
+Control Unit: Time = 30ns, -----Fetch state-----
+
+30ns: test value of pst = 1
+time = 42ns, memory[add] : 00, address : 00, Data : 00, rd : 1, wrt = 0
+Data Unit: Time = 42ns, Instruction = 00, dat = 00, RD = 1,WR = 0, add = 0, load_IR = 1 
+
+Control Unit: Time = 42ns, -----Inc PR state-----
+
+42ns: test value of pst = 2
+42ns: test value of AR = 80
+test value of DR = 88
+test value of GR = 89
+test value of FR = 09
+42ns:opcode = 0; src = 0; dst= 0;
+Data Unit: Time = 54ns, Instruction = 00, dat = zz, RD = 0,WR = 0, add = 0, load_IR = 0 
+
+Control Unit: Time = 54ns, decode opcode = 0 
+
+Control Unit: Time = 54ns, -----NOP instruction-----
+
+54ns: test value of pst = 3
+Data Unit: Time = 66ns, Instruction = 00, dat = zz, RD = 0,WR = 0, add = 1, load_IR = 0 
+
+Control Unit: Time = 66ns, -----Fetch state-----
+
+66ns: test value of pst = 1
+time = 78ns, memory[add] : 24, address : 01, Data : 24, rd : 1, wrt = 0
+Data Unit: Time = 78ns, Instruction = 00, dat = 24, RD = 1,WR = 0, add = 1, load_IR = 1 
+
+Control Unit: Time = 78ns, -----Inc PR state-----
+
+78ns: test value of pst = 2
+78ns: test value of AR = 80
+test value of DR = 88
+test value of GR = 89
+test value of FR = 09
+78ns:opcode = 2; src = 0; dst= 1;
+Data Unit: Time = 90ns, Instruction = 24, dat = zz, RD = 0,WR = 0, add = 1, load_IR = 0 
+
+Control Unit: Time = 90ns, decode opcode = 2 
+
+Control Unit: Time = 90ns, -----READ instruction-----
+
+90ns: test value of pst = 3
+time = 102ns, memory[add] : 94, address : 80, Data : 94, rd : 1, wrt = 0
+Data Unit: Time = 102ns, Instruction = 24, dat = 94, RD = 1,WR = 0, add = 128, load_IR = 0 
+
+Control Unit: Time = 102ns, -----Read elaborate-----
+
+102ns: test value of pst = 6
+Data Unit: Time = 114ns, Instruction = 24, dat = zz, RD = 0,WR = 0, add = 2, load_IR = 0 
+
+Data Unit: after loading Time = 114ns, Operand1 = xx, Operand2 = xx, DR = 94, GR = 89 AR = 80 FR = 9 
+
+Control Unit: Time = 114ns, -----Fetch state-----
+
+114ns: test value of pst = 1
+114ns:DUT:result==94
+test value of mem = 94
+READ operation:output matches expected result
+*****************************************
+
+time = 126ns, memory[add] : 59, address : 02, Data : 59, rd : 1, wrt = 0
+Data Unit: Time = 126ns, Instruction = 24, dat = 59, RD = 1,WR = 0, add = 2, load_IR = 1 
+
+Control Unit: Time = 126ns, -----Inc PR state-----
+
+126ns: test value of pst = 2
+126ns: test value of AR = 80
+test value of DR = 94
+test value of GR = 89
+test value of FR = 09
+126ns:opcode = 5; src = 1; dst= 2;
+TB:result=1d
+dest operand=2
+Data Unit: Time = 138ns, Instruction = 59, dat = zz, RD = 0,WR = 0, add = 2, load_IR = 0 
+
+Control Unit: Time = 138ns, decode opcode = 5 
+
+Control Unit: Time = 138ns, -----ADD instruction-----
+
+138ns: test value of pst = 3
+Data Unit: Time = 150ns, Instruction = 59, dat = zz, RD = 0,WR = 0, add = 3, load_IR = 0 
+
+Data Unit: after loading Time = 150ns, Operand1 = 94, Operand2 = 89, DR = 94, GR = 89 AR = 80 FR = 9 
+
+Control Unit: Time = 150ns, -----Mode selection for ADD-----
+
+150ns: test value of pst = 4
+Data Unit: Time = 162ns, Instruction = 59, dat = zz, RD = 0,WR = 0, add = 3, load_IR = 0 
+
+Control Unit: Time = 162ns, -----Execute elaborate-----
+
+162ns: test value of pst = 9
+Data Unit: Time = 174ns, Instruction = 59, dat = zz, RD = 0,WR = 0, add = 3, load_IR = 0 
+
+Control Unit: Time = 174ns, -----Fetch state-----
+
+174ns: test value of pst = 1
+174ns:DUT:result==1d
+test value of FR = 03
+ADD operation:output matches expected result
+*****************************************
+
+time = 186ns, memory[add] : 44, address : 03, Data : 44, rd : 1, wrt = 0
+Data Unit: Time = 186ns, Instruction = 59, dat = 44, RD = 1,WR = 0, add = 3, load_IR = 1 
+
+Control Unit: Time = 186ns, -----Inc PR state-----
+
+186ns: test value of pst = 2
+186ns: test value of AR = 80
+test value of DR = 94
+test value of GR = 1d
+test value of FR = 03
+186ns:opcode = 4; src = 0; dst= 1;
+Data Unit: Time = 198ns, Instruction = 44, dat = zz, RD = 0,WR = 0, add = 3, load_IR = 0 
+
+Control Unit: Time = 198ns, decode opcode = 4 
+
+Control Unit: Time = 198ns, -----COPY instruction-----
+
+198ns: test value of pst = 3
+Data Unit: Time = 210ns, Instruction = 44, dat = zz, RD = 0,WR = 0, add = 4, load_IR = 0 
+
+Data Unit: after loading Time = 210ns, Operand1 = 94, Operand2 = 89, DR = 80, GR = 1d AR = 80 FR = 3 
+
+Control Unit: Time = 210ns, -----Fetch state-----
+
+210ns: test value of pst = 1
+COPY operation: output of COPY operation matches expected result
+*****************************************
+
+time = 222ns, memory[add] : 81, address : 04, Data : 81, rd : 1, wrt = 0
+Data Unit: Time = 222ns, Instruction = 44, dat = 81, RD = 1,WR = 0, add = 4, load_IR = 1 
+
+Control Unit: Time = 222ns, -----Inc PR state-----
+
+222ns: test value of pst = 2
+222ns: test value of AR = 80
+test value of DR = 80
+test value of GR = 1d
+test value of FR = 03
+222ns:opcode = 8; src = 1; dst= 0;
+222ns: LLS's LSB = 01
+Data Unit: Time = 234ns, Instruction = 81, dat = zz, RD = 0,WR = 0, add = 4, load_IR = 0 
+
+Control Unit: Time = 234ns, decode opcode = 8 
+
+Control Unit: Time = 234ns, -----LMS instruction-----
+
+234ns: test value of pst = 3
+Data Unit: Time = 246ns, Instruction = 81, dat = zz, RD = 0,WR = 0, add = 5, load_IR = 0 
+
+Data Unit: after loading Time = 246ns, Operand1 = 94, Operand2 = 89, DR = 80, GR = 1d AR = 80 FR = 3 
+
+Control Unit: Time = 246ns, -----Fetch state-----
+
+246ns: test value of pst = 1
+246ns:  GR's MSB = 01
+LMS operation: successful
+*****************************************
+
+time = 258ns, memory[add] : 82, address : 05, Data : 82, rd : 1, wrt = 0
+Data Unit: Time = 258ns, Instruction = 81, dat = 82, RD = 1,WR = 0, add = 5, load_IR = 1 
+
+Control Unit: Time = 258ns, -----Inc PR state-----
+
+258ns: test value of pst = 2
+258ns: test value of AR = 80
+test value of DR = 80
+test value of GR = 1d
+test value of FR = 03
+258ns:opcode = 8; src = 2; dst= 0;
+258ns: LLS's LSB = 02
+Data Unit: Time = 270ns, Instruction = 82, dat = zz, RD = 0,WR = 0, add = 5, load_IR = 0 
+
+Control Unit: Time = 270ns, decode opcode = 8 
+
+Control Unit: Time = 270ns, -----LMS instruction-----
+
+270ns: test value of pst = 3
+Data Unit: Time = 282ns, Instruction = 82, dat = zz, RD = 0,WR = 0, add = 6, load_IR = 0 
+
+Data Unit: after loading Time = 282ns, Operand1 = 94, Operand2 = 89, DR = 80, GR = 2d AR = 80 FR = 3 
+
+Control Unit: Time = 282ns, -----Fetch state-----
+
+282ns: test value of pst = 1
+282ns:  GR's MSB = 02
+LMS operation: successful
+*****************************************
+
+time = 294ns, memory[add] : 89, address : 06, Data : 89, rd : 1, wrt = 0
+Data Unit: Time = 294ns, Instruction = 82, dat = 89, RD = 1,WR = 0, add = 6, load_IR = 1 
+
+Control Unit: Time = 294ns, -----Inc PR state-----
+
+294ns: test value of pst = 2
+294ns: test value of AR = 80
+test value of DR = 80
+test value of GR = 2d
+test value of FR = 03
+294ns:opcode = 8; src = 1; dst= 2;
+294ns: LLS's LSB = 09
+Data Unit: Time = 306ns, Instruction = 89, dat = zz, RD = 0,WR = 0, add = 6, load_IR = 0 
+
+Control Unit: Time = 306ns, decode opcode = 8 
+
+Control Unit: Time = 306ns, -----LMS instruction-----
+
+306ns: test value of pst = 3
+Data Unit: Time = 318ns, Instruction = 89, dat = zz, RD = 0,WR = 0, add = 7, load_IR = 0 
+
+Data Unit: after loading Time = 318ns, Operand1 = 94, Operand2 = 89, DR = 80, GR = 9d AR = 80 FR = 3 
+
+Control Unit: Time = 318ns, -----Fetch state-----
+
+318ns: test value of pst = 1
+318ns:  GR's MSB = 09
+LMS operation: successful
+*****************************************
+
+time = 330ns, memory[add] : 90, address : 07, Data : 90, rd : 1, wrt = 0
+Data Unit: Time = 330ns, Instruction = 89, dat = 90, RD = 1,WR = 0, add = 7, load_IR = 1 
+
+Control Unit: Time = 330ns, -----Inc PR state-----
+
+330ns: test value of pst = 2
+330ns: test value of AR = 80
+test value of DR = 80
+test value of GR = 9d
+test value of FR = 03
+330ns:opcode = 9; src = 0; dst= 0;
+330ns: FR's LSB = 03
+Data Unit: Time = 342ns, Instruction = 90, dat = zz, RD = 0,WR = 0, add = 7, load_IR = 0 
+
+Control Unit: Time = 342ns, decode opcode = 9 
+
+Control Unit: Time = 342ns, -----CFR instruction-----
+
+342ns: test value of pst = 3
+Data Unit: Time = 354ns, Instruction = 90, dat = zz, RD = 0,WR = 0, add = 8, load_IR = 0 
+
+Data Unit: after loading Time = 354ns, Operand1 = 94, Operand2 = 89, DR = 80, GR = 03 AR = 80 FR = 3 
+
+Control Unit: Time = 354ns, -----Fetch state-----
+
+354ns: test value of pst = 1
+354ns:  GR's LSB = 03
+CFR operation: successful
+*****************************************
+
+time = 366ns, memory[add] : 34, address : 08, Data : 34, rd : 1, wrt = 0
+Data Unit: Time = 366ns, Instruction = 90, dat = 34, RD = 1,WR = 0, add = 8, load_IR = 1 
+
+Control Unit: Time = 366ns, -----Inc PR state-----
+
+366ns: test value of pst = 2
+366ns: test value of AR = 80
+test value of DR = 80
+test value of GR = 03
+test value of FR = 03
+366ns:opcode = 3; src = 0; dst= 1;
+Data Unit: Time = 378ns, Instruction = 34, dat = zz, RD = 0,WR = 0, add = 8, load_IR = 0 
+
+Control Unit: Time = 378ns, decode opcode = 3 
+
+Control Unit: Time = 378ns, -----WRITE instruction-----
+
+378ns: test value of pst = 3
+Data Unit: Time = 390ns, Instruction = 34, dat = zz, RD = 0,WR = 0, add = 9, load_IR = 0 
+
+Data Unit: after loading Time = 390ns, Operand1 = 94, Operand2 = 89, DR = 80, GR = 03 AR = 80 FR = 3 
+
+Control Unit: Time = 390ns, -----Write elaborate-----
+
+390ns: test value of pst = 7
+memory[add] : 94, address : 80, Data after ALU operation : 80
+time = 402ns, memory[add] : 94, address : 80, Data : 80, rd : 0, wrt = 1
+Data Unit: Time = 402ns, Instruction = 34, dat = 80, RD = 0,WR = 1, add = 128, load_IR = 0 
+
+Control Unit: Time = 402ns, -----Fetch state-----
+
+402ns: test value of pst = 1
+time = 414ns, memory[add] : 66, address : 09, Data : 66, rd : 1, wrt = 0
+Data Unit: Time = 414ns, Instruction = 34, dat = 66, RD = 1,WR = 0, add = 9, load_IR = 1 
+
+Control Unit: Time = 414ns, -----Inc PR state-----
+
+414ns: test value of pst = 2
+414ns:DUT:result==80
+test value of mem = 80
+WRITE operation:output matches expected result
+*****************************************
+
+Data Unit: Time = 426ns, Instruction = 66, dat = zz, RD = 0,WR = 0, add = 9, load_IR = 0 
+
+Control Unit: Time = 426ns, decode opcode = 6 
+
+Control Unit: Time = 426ns, -----SUB instruction-----
+
+426ns: test value of pst = 3
+Data Unit: Time = 438ns, Instruction = 66, dat = zz, RD = 0,WR = 0, add = 10, load_IR = 0 
+
+Data Unit: after loading Time = 438ns, Operand1 = 03, Operand2 = 80, DR = 80, GR = 03 AR = 80 FR = 3 
+
+Control Unit: Time = 438ns, -----Mode selection for SUB-----
+
+438ns: test value of pst = 5
+Data Unit: Time = 450ns, Instruction = 66, dat = zz, RD = 0,WR = 0, add = 10, load_IR = 0 
+
+Control Unit: Time = 450ns, -----Execute elaborate-----
+
+450ns: test value of pst = 9
+Data Unit: Time = 462ns, Instruction = 66, dat = zz, RD = 0,WR = 0, add = 10, load_IR = 0 
+
+Control Unit: Time = 462ns, -----Fetch state-----
+
+462ns: test value of pst = 1
+time = 474ns, memory[add] : 74, address : 0a, Data : 74, rd : 1, wrt = 0
+Data Unit: Time = 474ns, Instruction = 66, dat = 74, RD = 1,WR = 0, add = 10, load_IR = 1 
+
+Control Unit: Time = 474ns, -----Inc PR state-----
+
+474ns: test value of pst = 2
+474ns: test value of AR = 80
+test value of DR = 7d
+test value of GR = 03
+test value of FR = 02
+474ns:opcode = 7; src = 0; dst= 1;
+474ns: LLS's LSB = 04
+Data Unit: Time = 486ns, Instruction = 74, dat = zz, RD = 0,WR = 0, add = 10, load_IR = 0 
+
+Control Unit: Time = 486ns, decode opcode = 7 
+
+Control Unit: Time = 486ns, -----LLS instruction-----
+
+486ns: test value of pst = 3
+Data Unit: Time = 498ns, Instruction = 74, dat = zz, RD = 0,WR = 0, add = 11, load_IR = 0 
+
+Data Unit: after loading Time = 498ns, Operand1 = 03, Operand2 = 80, DR = 7d, GR = 04 AR = 80 FR = 2 
+
+Control Unit: Time = 498ns, -----Fetch state-----
+
+498ns: test value of pst = 1
+498ns:  GR's LSB = 04
+LLS operation: successful
+*****************************************
+
+time = 510ns, memory[add] : 10, address : 0b, Data : 10, rd : 1, wrt = 0
+Data Unit: Time = 510ns, Instruction = 74, dat = 10, RD = 1,WR = 0, add = 11, load_IR = 1 
+
+Control Unit: Time = 510ns, -----Inc PR state-----
+
+510ns: test value of pst = 2
+510ns: test value of AR = 80
+test value of DR = 7d
+test value of GR = 04
+test value of FR = 02
+510ns:opcode = 1; src = 0; dst= 0;
+test value of AR = 80
+Data Unit: Time = 522ns, Instruction = 10, dat = zz, RD = 0,WR = 0, add = 11, load_IR = 0 
+
+Control Unit: Time = 522ns, decode opcode = 1 
+
+Control Unit: Time = 522ns, -----JUMP instruction-----
+
+522ns: test value of pst = 3
+Data Unit: Time = 534ns, Instruction = 10, dat = zz, RD = 0,WR = 0, add = 12, load_IR = 0 
+
+Control Unit: Time = 534ns, -----Fetch state-----
+
+534ns: test value of pst = 1
+time = 546ns, memory[add] : 80, address : 80, Data : 80, rd : 1, wrt = 0
+Data Unit: Time = 546ns, Instruction = 10, dat = 80, RD = 1,WR = 0, add = 128, load_IR = 1 
+
+Control Unit: Time = 546ns, -----Inc PR state-----
+
+546ns: test value of pst = 2
+test value of PR = 80
+546ns:DUT:result==80
+test value of mem = 80
+JUMP operation:output matches expected result
+*****************************************
+
+Data Unit: Time = 558ns, Instruction = 80, dat = zz, RD = 0,WR = 0, add = 128, load_IR = 0 
+
+Control Unit: Time = 558ns, decode opcode = 8 
+
+Control Unit: Time = 558ns, -----LMS instruction-----
+
+558ns: test value of pst = 3
+Data Unit: Time = 570ns, Instruction = 80, dat = zz, RD = 0,WR = 0, add = 129, load_IR = 0 
+
+Data Unit: after loading Time = 570ns, Operand1 = 03, Operand2 = 80, DR = 7d, GR = 04 AR = 80 FR = 2 
+
+Control Unit: Time = 570ns, -----Fetch state-----
+
+570ns: test value of pst = 1
+time = 582ns, memory[add] : 91, address : 81, Data : 91, rd : 1, wrt = 0
+Data Unit: Time = 582ns, Instruction = 80, dat = 91, RD = 1,WR = 0, add = 129, load_IR = 1 
+
+Control Unit: Time = 582ns, -----Inc PR state-----
+
+582ns: test value of pst = 2
+582ns: test value of AR = 80
+test value of DR = 7d
+test value of GR = 04
+test value of FR = 02
+582ns:opcode = 9; src = 1; dst= 0;
+582ns: FR's LSB = 02
+Data Unit: Time = 594ns, Instruction = 91, dat = zz, RD = 0,WR = 0, add = 129, load_IR = 0 
+
+Control Unit: Time = 594ns, decode opcode = 9 
+
+Control Unit: Time = 594ns, -----CFR instruction-----
+
+594ns: test value of pst = 3
+Data Unit: Time = 606ns, Instruction = 91, dat = zz, RD = 0,WR = 0, add = 130, load_IR = 0 
+
+Data Unit: after loading Time = 606ns, Operand1 = 03, Operand2 = 80, DR = 7d, GR = 02 AR = 80 FR = 2 
+
+Control Unit: Time = 606ns, -----Fetch state-----
+
+606ns: test value of pst = 1
+606ns:  GR's LSB = 02
+CFR operation: successful
+*****************************************
+
+time = 618ns, memory[add] : 56, address : 82, Data : 56, rd : 1, wrt = 0
+Data Unit: Time = 618ns, Instruction = 91, dat = 56, RD = 1,WR = 0, add = 130, load_IR = 1 
+
+Control Unit: Time = 618ns, -----Inc PR state-----
+
+618ns: test value of pst = 2
+618ns: test value of AR = 80
+test value of DR = 7d
+test value of GR = 02
+test value of FR = 02
+618ns:opcode = 5; src = 2; dst= 1;
+TB:result=7f
+dest operand=1
+Data Unit: Time = 630ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 130, load_IR = 0 
+
+Control Unit: Time = 630ns, decode opcode = 5 
+
+Control Unit: Time = 630ns, -----ADD instruction-----
+
+630ns: test value of pst = 3
+Data Unit: Time = 642ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 131, load_IR = 0 
+
+Data Unit: after loading Time = 642ns, Operand1 = 02, Operand2 = 7d, DR = 7d, GR = 02 AR = 80 FR = 2 
+
+Control Unit: Time = 642ns, -----Mode selection for ADD-----
+
+642ns: test value of pst = 4
+Data Unit: Time = 654ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 131, load_IR = 0 
+
+Control Unit: Time = 654ns, -----Execute elaborate-----
+
+654ns: test value of pst = 9
+Data Unit: Time = 666ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 131, load_IR = 0 
+
+Control Unit: Time = 666ns, -----Fetch state-----
+
+666ns: test value of pst = 1
+666ns:DUT:result==7f
+test value of FR = 00
+ADD operation:output matches expected result
+*****************************************
+
+time = 678ns, memory[add] : 56, address : 83, Data : 56, rd : 1, wrt = 0
+Data Unit: Time = 678ns, Instruction = 56, dat = 56, RD = 1,WR = 0, add = 131, load_IR = 1 
+
+Control Unit: Time = 678ns, -----Inc PR state-----
+
+678ns: test value of pst = 2
+678ns: test value of AR = 80
+test value of DR = 7f
+test value of GR = 02
+test value of FR = 00
+678ns:opcode = 5; src = 2; dst= 1;
+TB:result=81
+dest operand=1
+Data Unit: Time = 690ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 131, load_IR = 0 
+
+Control Unit: Time = 690ns, decode opcode = 5 
+
+Control Unit: Time = 690ns, -----ADD instruction-----
+
+690ns: test value of pst = 3
+Data Unit: Time = 702ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 132, load_IR = 0 
+
+Data Unit: after loading Time = 702ns, Operand1 = 02, Operand2 = 7f, DR = 7f, GR = 02 AR = 80 FR = 0 
+
+Control Unit: Time = 702ns, -----Mode selection for ADD-----
+
+702ns: test value of pst = 4
+Data Unit: Time = 714ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 132, load_IR = 0 
+
+Control Unit: Time = 714ns, -----Execute elaborate-----
+
+714ns: test value of pst = 9
+Data Unit: Time = 726ns, Instruction = 56, dat = zz, RD = 0,WR = 0, add = 132, load_IR = 0 
+
+Control Unit: Time = 726ns, -----Fetch state-----
+
+726ns: test value of pst = 1
+726ns:DUT:result==81
+test value of FR = 05
+ADD operation:output matches expected result
+*****************************************
+
+time = 738ns, memory[add] : 38, address : 84, Data : 38, rd : 1, wrt = 0
+Data Unit: Time = 738ns, Instruction = 56, dat = 38, RD = 1,WR = 0, add = 132, load_IR = 1 
+
+Control Unit: Time = 738ns, -----Inc PR state-----
+
+738ns: test value of pst = 2
+738ns: test value of AR = 80
+test value of DR = 81
+test value of GR = 02
+test value of FR = 05
+738ns:opcode = 3; src = 0; dst= 2;
+Data Unit: Time = 750ns, Instruction = 38, dat = zz, RD = 0,WR = 0, add = 132, load_IR = 0 
+
+Control Unit: Time = 750ns, decode opcode = 3 
+
+Control Unit: Time = 750ns, -----WRITE instruction-----
+
+750ns: test value of pst = 3
+Data Unit: Time = 762ns, Instruction = 38, dat = zz, RD = 0,WR = 0, add = 133, load_IR = 0 
+
+Data Unit: after loading Time = 762ns, Operand1 = 02, Operand2 = 7f, DR = 81, GR = 02 AR = 80 FR = 5 
+
+Control Unit: Time = 762ns, -----Write elaborate-----
+
+762ns: test value of pst = 7
+memory[add] : 80, address : 80, Data after ALU operation : 02
+time = 774ns, memory[add] : 80, address : 80, Data : 02, rd : 0, wrt = 1
+Data Unit: Time = 774ns, Instruction = 38, dat = 02, RD = 0,WR = 1, add = 128, load_IR = 0 
+
+Control Unit: Time = 774ns, -----Fetch state-----
+
+774ns: test value of pst = 1
+time = 786ns, memory[add] : 89, address : 85, Data : 89, rd : 1, wrt = 0
+Data Unit: Time = 786ns, Instruction = 38, dat = 89, RD = 1,WR = 0, add = 133, load_IR = 1 
+
+Control Unit: Time = 786ns, -----Inc PR state-----
+
+786ns: test value of pst = 2
+786ns:DUT:result==2
+test value of mem = 81
+WRITE: error- mismatch:!!
+Data Unit: Time = 798ns, Instruction = 89, dat = zz, RD = 0,WR = 0, add = 133, load_IR = 0 
+
+Control Unit: Time = 798ns, decode opcode = 8 
+
+Control Unit: Time = 798ns, -----LMS instruction-----
+
+798ns: test value of pst = 3
+Data Unit: Time = 810ns, Instruction = 89, dat = zz, RD = 0,WR = 0, add = 134, load_IR = 0 
+
+Data Unit: after loading Time = 810ns, Operand1 = 02, Operand2 = 7f, DR = 81, GR = 92 AR = 80 FR = 5 
+
+Control Unit: Time = 810ns, -----Fetch state-----
+
+810ns: test value of pst = 1
+time = 822ns, memory[add] : 96, address : 86, Data : 96, rd : 1, wrt = 0
+Data Unit: Time = 822ns, Instruction = 89, dat = 96, RD = 1,WR = 0, add = 134, load_IR = 1 
+
+Control Unit: Time = 822ns, -----Inc PR state-----
+
+822ns: test value of pst = 2
+822ns: test value of AR = 80
+test value of DR = 81
+test value of GR = 92
+test value of FR = 05
+822ns:opcode = 9; src = 2; dst= 1;
+822ns: FR's LSB = 05
+Data Unit: Time = 834ns, Instruction = 96, dat = zz, RD = 0,WR = 0, add = 134, load_IR = 0 
+
+Control Unit: Time = 834ns, decode opcode = 9 
+
+Control Unit: Time = 834ns, -----CFR instruction-----
+
+834ns: test value of pst = 3
+Data Unit: Time = 846ns, Instruction = 96, dat = zz, RD = 0,WR = 0, add = 135, load_IR = 0 
+
+Data Unit: after loading Time = 846ns, Operand1 = 02, Operand2 = 7f, DR = 81, GR = 05 AR = 80 FR = 5 
+
+Control Unit: Time = 846ns, -----Fetch state-----
+
+846ns: test value of pst = 1
+846ns:  GR's LSB = 05
+CFR operation: successful
+*****************************************
+
+time = 858ns, memory[add] : 98, address : 87, Data : 98, rd : 1, wrt = 0
+Data Unit: Time = 858ns, Instruction = 96, dat = 98, RD = 1,WR = 0, add = 135, load_IR = 1 
+
+Control Unit: Time = 858ns, -----Inc PR state-----
+
+858ns: test value of pst = 2
+858ns: test value of AR = 80
+test value of DR = 81
+test value of GR = 05
+test value of FR = 05
+858ns:opcode = 9; src = 0; dst= 2;
+858ns: FR's LSB = 05
+Data Unit: Time = 870ns, Instruction = 98, dat = zz, RD = 0,WR = 0, add = 135, load_IR = 0 
+
+Control Unit: Time = 870ns, decode opcode = 9 
+
+Control Unit: Time = 870ns, -----CFR instruction-----
+
+870ns: test value of pst = 3
+Data Unit: Time = 882ns, Instruction = 98, dat = zz, RD = 0,WR = 0, add = 136, load_IR = 0 
+
+Data Unit: after loading Time = 882ns, Operand1 = 02, Operand2 = 7f, DR = 81, GR = 05 AR = 80 FR = 5 
+
+Control Unit: Time = 882ns, -----Fetch state-----
+
+882ns: test value of pst = 1
+882ns:  GR's LSB = 05
+CFR operation: successful
+*****************************************
+
+time = 894ns, memory[add] : 70, address : 88, Data : 70, rd : 1, wrt = 0
+Data Unit: Time = 894ns, Instruction = 98, dat = 70, RD = 1,WR = 0, add = 136, load_IR = 1 
+
+Control Unit: Time = 894ns, -----Inc PR state-----
+
+894ns: test value of pst = 2
+894ns: test value of AR = 80
+test value of DR = 81
+test value of GR = 05
+test value of FR = 05
+894ns:opcode = 7; src = 0; dst= 0;
+894ns: LLS's LSB = 00
+Data Unit: Time = 906ns, Instruction = 70, dat = zz, RD = 0,WR = 0, add = 136, load_IR = 0 
+
+Control Unit: Time = 906ns, decode opcode = 7 
+
+Control Unit: Time = 906ns, -----LLS instruction-----
+
+906ns: test value of pst = 3
+Data Unit: Time = 918ns, Instruction = 70, dat = zz, RD = 0,WR = 0, add = 137, load_IR = 0 
+
+Data Unit: after loading Time = 918ns, Operand1 = 02, Operand2 = 7f, DR = 81, GR = 00 AR = 80 FR = 5 
+
+Control Unit: Time = 918ns, -----Fetch state-----
+
+918ns: test value of pst = 1
+918ns:  GR's LSB = 00
+LLS operation: successful
+*****************************************
+
+time = 930ns, memory[add] : 74, address : 89, Data : 74, rd : 1, wrt = 0
+Data Unit: Time = 930ns, Instruction = 70, dat = 74, RD = 1,WR = 0, add = 137, load_IR = 1 
+
+Control Unit: Time = 930ns, -----Inc PR state-----
+
+930ns: test value of pst = 2
+930ns: test value of AR = 80
+test value of DR = 81
+test value of GR = 00
+test value of FR = 05
+930ns:opcode = 7; src = 0; dst= 1;
+930ns: LLS's LSB = 04
+Data Unit: Time = 942ns, Instruction = 74, dat = zz, RD = 0,WR = 0, add = 137, load_IR = 0 
+
+Control Unit: Time = 942ns, decode opcode = 7 
+
+Control Unit: Time = 942ns, -----LLS instruction-----
+
+942ns: test value of pst = 3
+Data Unit: Time = 954ns, Instruction = 74, dat = zz, RD = 0,WR = 0, add = 138, load_IR = 0 
+
+Data Unit: after loading Time = 954ns, Operand1 = 02, Operand2 = 7f, DR = 81, GR = 04 AR = 80 FR = 5 
+
+Control Unit: Time = 954ns, -----Fetch state-----
+
+954ns: test value of pst = 1
+954ns:  GR's LSB = 04
+LLS operation: successful
+*****************************************
+
+time = 966ns, memory[add] : 82, address : 8a, Data : 82, rd : 1, wrt = 0
+Data Unit: Time = 966ns, Instruction = 74, dat = 82, RD = 1,WR = 0, add = 138, load_IR = 1 
+
+Control Unit: Time = 966ns, -----Inc PR state-----
+
+966ns: test value of pst = 2
+966ns: test value of AR = 80
+test value of DR = 81
+test value of GR = 04
+test value of FR = 05
+966ns:opcode = 8; src = 2; dst= 0;
+966ns: LLS's LSB = 02
+Data Unit: Time = 978ns, Instruction = 82, dat = zz, RD = 0,WR = 0, add = 138, load_IR = 0 
+
+Control Unit: Time = 978ns, decode opcode = 8 
+
+Control Unit: Time = 978ns, -----LMS instruction-----
+
+978ns: test value of pst = 3
+Data Unit: Time = 990ns, Instruction = 82, dat = zz, RD = 0,WR = 0, add = 139, load_IR = 0 
+
+Data Unit: after loading Time = 990ns, Operand1 = 02, Operand2 = 7f, DR = 81, GR = 24 AR = 80 FR = 5 
+
+Control Unit: Time = 990ns, -----Fetch state-----
+
+990ns: test value of pst = 1
+990ns:  GR's MSB = 02
+LMS operation: successful
+*****************************************
+
+time = 1002ns, memory[add] : 8a, address : 8b, Data : 8a, rd : 1, wrt = 0
+Data Unit: Time = 1002ns, Instruction = 82, dat = 8a, RD = 1,WR = 0, add = 139, load_IR = 1 
+
+Control Unit: Time = 1002ns, -----Inc PR state-----
+
+1002ns: test value of pst = 2
+1002ns: test value of AR = 80
+test value of DR = 81
+test value of GR = 24
+test value of FR = 05
+1002ns:opcode = 8; src = 2; dst= 2;
+1002ns: LLS's LSB = 0a
+Data Unit: Time = 1014ns, Instruction = 8a, dat = zz, RD = 0,WR = 0, add = 139, load_IR = 0 
+
+Control Unit: Time = 1014ns, decode opcode = 8 
+
+Control Unit: Time = 1014ns, -----LMS instruction-----
+
+1014ns: test value of pst = 3
+$finish called from file "testbench.sv", line 28.
+$finish at simulation time               102200
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1022000 ps
+CPU Time:      0.630 seconds;       Data structure size:   0.0Mb
+Fri Dec 18 22:49:30 2015
